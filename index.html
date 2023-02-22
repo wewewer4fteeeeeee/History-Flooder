@@ -3,12 +3,11 @@
     <head>
         <script>
             function onClick() {
-                document.write(`<style> iframe{margin:0px; border:none; padding:0px; outline:none} body{margin:0px}</style><iframe src = 'https://help.mshelp.tk' width = ${window.innerWidth} height = ${window.innerHeight} />`)
+                var num=prompt("History flood amount:");done=false;x=window.location.href;for (var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert("History flood successful! "+window.location.href+" now appears in your history "+num+(num==1?" time.":" times."))}
             };
         </script>
     </head>
     <body>
     <button onclick="onClick()">launch mshelp</button>
-    <a href="javascript: document.write(`<style> iframe{margin:0px; border:none; padding:0px; outline:none} body{margin:0px}</style><iframe src = ${prompt('enter url INCLUDE http OR https PLEASE')} width = ${window.innerWidth} height = ${window.innerHeight} />`)">custom url</a>
     </body>
 </html>
